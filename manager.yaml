@@ -14,7 +14,7 @@ spec:
       labels:
         app: manager
     spec:
-      serviceAccountName: masaruz
+      serviceAccountName: masaruz # Reference below
       containers:
       - name: manager
         image: masaruz/manager:0.0.2
@@ -33,12 +33,14 @@ spec:
     targetPort: 8080
     nodePort: 30002
 ---
+# Create service account to give the permission
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: masaruz
   namespace: default
 ---
+# Subject role to service account
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
 metadata:
