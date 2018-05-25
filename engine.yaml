@@ -7,4 +7,4 @@ spec:
   restartPolicy: Never
   containers:
     - name: engine
-      image: masaruz/engine:0.0.3
+      image: masaruz/engine:0.0.7
